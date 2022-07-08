@@ -18,7 +18,7 @@
     width: 40%;
     margin-left: 30%;
     border-radius: 10px;
-   
+    font-size: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: white
 }
@@ -28,20 +28,25 @@
     width: 50px;  
     padding: 3%;
     border-radius: 50%;
+    margin-right: 4%;
 }
 .div2{
    margin-left: .1%;
    width: 20%;
-   padding: 1.5%;
+   padding: 2%;
   text-align: left;
 }
 .div3,.div4{
     margin-left: 1%; 
     width: 20%; 
-    padding: 1.5%;
+    padding: 2.5%;
    text-align: left;
  }
  #load{
    margin-top: 2%;
    margin-bottom: 3%;
  }
+ #noResult>h1{
+    color :rgb(224, 31, 31);
+ }
+ 

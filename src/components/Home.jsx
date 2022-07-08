@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { BasicModal } from "./Box"
 import InfiniteScroll from "react-infinite-scroll-component";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import {Rings } from  'react-loader-spinner'
 import "../styles/Home.css"
 export const Home=()=>{
     const [data,setData]=useState([])
@@ -26,7 +25,7 @@ export const Home=()=>{
            
         }
         catch(error){
-          return error
+          console.log(error)
         }
 
      }
@@ -42,17 +41,19 @@ export const Home=()=>{
               
             }
                catch(error){
-            console.log(error)
+           console.log(error)
         }
      }
-  
+
 return (
   
     <div className="container">
     <h1 className="heading">Rick and Morty Search</h1>
     <input placeholder="🔍 Search For Contact" type="text" onInput={(e)=>{setName(e.target.value)}} className="searchInput"></input>
-   
-             <InfiniteScroll
+             {data ?
+           
+
+            <InfiniteScroll
             dataLength={data.length}
             next={GetdataAgain}
             hasMore={data.length<=count}
@@ -78,9 +79,18 @@ return (
         })}
       
       </InfiniteScroll>
-    
+
+   : 
+         <div id="noResult">
+          <h1>Sorry☹️  No Result Found</h1>
+          <img src="https://cdni.iconscout.com/illustration/premium/thumb/search-result-not-found-3428237-2902696.png" style={{width:"40%",height:"400px"}}></img>
+          </div> 
+ }
     </div>
-    
 )
 
 }
+
+
+
+     
